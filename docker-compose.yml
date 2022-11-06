@@ -23,7 +23,7 @@ services:
     ports:
       - "8051:8051"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/database?autoReconnect=true&useSSL=false
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/database?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
     depends_on:
        - mysql
 volumes:
