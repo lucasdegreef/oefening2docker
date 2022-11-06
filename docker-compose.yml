@@ -17,6 +17,9 @@ services:
     environment:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: abc123
-
+  book-info-service:
+    image: miverboven/book-info-service-ex
+    ports:
+      - "8051:8051"
 volumes:
  mysql_data_container:
