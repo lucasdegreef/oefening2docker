@@ -2,10 +2,13 @@ version: "3.9"
 services:
   mysql:
     image: "mysql:8"
+    container_name: 'mysql:8'
     environment:
       MYSQL_ROOT_PASSWORD: abc123
     ports:
       - "3306:3306"
+    networks:
+      data-service-network
     volumes:
       - mysql_data_container:/var/lib/mysql
   phpmyadmin:
@@ -19,7 +22,10 @@ services:
       MYSQL_ROOT_PASSWORD: abc123
   book-info-service:
     image: miverboven/book-info-service-ex
+    container_name: 'miverboven/book-info-service-ex'
     ports:
       - "8051:8051"
+    networks:
+      data-service-network  
 volumes:
  mysql_data_container:
